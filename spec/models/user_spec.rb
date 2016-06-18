@@ -12,4 +12,12 @@ RSpec.describe User do
       with_options(null: false) }
 
   it { should have_db_index(:email).unique(true) }
+
+  it 'normalizes email addresses' do
+    user = User.create(email: 'JOEUSER@domain.com')
+
+    user.reload
+
+    expect(user.email).to eql('joeuser@domain.com')
+  end
 end

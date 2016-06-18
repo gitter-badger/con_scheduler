@@ -29,4 +29,5 @@ group :test do
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
   gem 'launchy'
+  gem 'shoulda'
 end
